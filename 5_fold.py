@@ -70,7 +70,6 @@ emb_accuracy_ensemble = []
 #------------------------------------------Case 0: shuffle------------------------------------------------
 if opt.PU_data_table_10_case_0:
   for i in range(5):
-    tf.keras.backend.clear_session()
     distance_Healthy = int(0.6*len(Healthy))
     start_Healthy    = int(0.2*i*len(Healthy))
     X_train_Healthy = Healthy[start_Healthy: start_Healthy+distance_Healthy]
@@ -180,7 +179,6 @@ if opt.PU_data_table_10_case_1:
  
   # Print the obtained combinations
   for idx, i in enumerate(list(comb)):
-    tf.keras.backend.clear_session()
     X_train_Healthy = Healthy[list(i)]
     y_train_Healthy = Healthy_label[list(i)]
     X_train_Healthy, y_train_Healthy = load_table_10_spe(X_train_Healthy, y_train_Healthy)
